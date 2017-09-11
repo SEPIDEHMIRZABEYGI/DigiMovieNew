@@ -4,4 +4,9 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+@Html.DropDownList("chengthem",new SelectList(new List<object>
+{
+    new{id=0 ,Name="x"},
+    new{id=1 ,Name="y"},
+},"id","name"
+),"تم مورد علاقه خود را وارد ",new { })

@@ -13,13 +13,12 @@ namespace DigiMovei.Controllers
             return View();
         }
 
-        public ActionResult About( int? id)
+        public ActionResult About()
         {
 
-            return Content(id.ToString());
-            //ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application description page.";
 
-            //return View();
+            return View();
         }
 
         public ActionResult Contact()
@@ -28,5 +27,8 @@ namespace DigiMovei.Controllers
 
             return View();
         }
+
+
+    
     }
 }
