@@ -4,9 +4,28 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-@Html.DropDownList("chengthem",new SelectList(new List<object>
+@*@using (Html.BeginForm("SetLayout", "Home"))
 {
-    new{id=0 ,Name="x"},
+@Html.DropDownList("chengthem", new SelectList(new List<object>
+{
+    new{id=0 ,Name="darkly"},
     new{id=1 ,Name="y"},
-},"id","name"
-),"تم مورد علاقه خود را وارد ",new { })
+}, "id", "name"
+), "تم مورد علاقه خود را انتخاب کنید ", new { onchange = "this.form.submit()" })
+
+}*@
+
+
+@using (Html.BeginForm("SetLayout", "Home"))
+{
+    @Html.Label("layout", "تم مورد علاقه خود را انتخاب کنید : ")
+    @Html.DropDownList(
+            "layout",
+            new List<SelectListItem> {
+                new SelectListItem {Text = "darkly" , Value = "darkly" },
+                new SelectListItem {Text = "journal" , Value = "journal" },
+                new SelectListItem {Text = "DEFULT" , Value = "Layout" },
+            },
+            new { onchange = "this.form.submit()" }
+        )
+}

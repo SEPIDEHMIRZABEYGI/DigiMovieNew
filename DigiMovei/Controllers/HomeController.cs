@@ -65,5 +65,13 @@ namespace DigiMovei.Controllers
             return View("Contact");
         }
 
+        [HttpPost]
+        public ActionResult SetLayout(string layout)
+        {
+            return View("About", "~/Views/Shared/_" + layout + ".cshtml");
+        }
+
+
+
     }
 }
