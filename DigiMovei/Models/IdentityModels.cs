@@ -29,5 +29,7 @@ namespace DigiMovei.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DigiMovei.Models.Movie> Movies { get; set; }
     }
 }

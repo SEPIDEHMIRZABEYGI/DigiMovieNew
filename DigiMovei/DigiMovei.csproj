@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,10 +200,20 @@
     <Compile Include="Migrations\201709160211187_first.Designer.cs">
       <DependentUpon>201709160211187_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709170329173_product.cs" />
+    <Compile Include="Migrations\201709170329173_product.Designer.cs">
+      <DependentUpon>201709170329173_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709170359087_addisexist.cs" />
+    <Compile Include="Migrations\201709170359087_addisexist.Designer.cs">
+      <DependentUpon>201709170359087_addisexist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\ShopingContex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -389,8 +400,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_darkly.cshtml" />
+    <Content Include="Views\Shared\_darkly+.cshtml" />
     <Content Include="Views\Shared\_journal.cshtml" />
+    <Content Include="Views\Shared\_darkly.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -411,6 +428,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709160211187_first.resx">
       <DependentUpon>201709160211187_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709170329173_product.resx">
+      <DependentUpon>201709170329173_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709170359087_addisexist.resx">
+      <DependentUpon>201709170359087_addisexist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
