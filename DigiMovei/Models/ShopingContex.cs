@@ -6,8 +6,9 @@ using System.Data.Entity;
 
 namespace DigiMovei.Models
 {
-    public class ShopingContex:DbContext
+    public class ShopingContex
     {
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categorys { get; set; }
     }
 }

@@ -208,8 +208,22 @@
     <Compile Include="Migrations\201709170359087_addisexist.Designer.cs">
       <DependentUpon>201709170359087_addisexist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709170413488_Category.cs" />
+    <Compile Include="Migrations\201709170413488_Category.Designer.cs">
+      <DependentUpon>201709170413488_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709170435593_Categoryproduct.cs" />
+    <Compile Include="Migrations\201709170435593_Categoryproduct.Designer.cs">
+      <DependentUpon>201709170435593_Categoryproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709170635463_MSSQLLocalDB.cs" />
+    <Compile Include="Migrations\201709170635463_MSSQLLocalDB.Designer.cs">
+      <DependentUpon>201709170635463_MSSQLLocalDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -400,14 +414,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_darkly+.cshtml" />
-    <Content Include="Views\Shared\_journal.cshtml" />
+    <Content Include="Views\Shared\_journal++.cshtml" />
     <Content Include="Views\Shared\_darkly.cshtml" />
     <Content Include="Views\Movies\Create.cshtml" />
     <Content Include="Views\Movies\Delete.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Shared\_journal.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -434,6 +448,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709170359087_addisexist.resx">
       <DependentUpon>201709170359087_addisexist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709170413488_Category.resx">
+      <DependentUpon>201709170413488_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709170435593_Categoryproduct.resx">
+      <DependentUpon>201709170435593_Categoryproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709170635463_MSSQLLocalDB.resx">
+      <DependentUpon>201709170635463_MSSQLLocalDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

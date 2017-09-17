@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+ 
 namespace DigiMovei.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -30,6 +30,8 @@ namespace DigiMovei.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<DigiMovei.Models.Movie> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+       public DbSet<Customer> Customers { get; set; }
     }
+
 }
