@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DigiMovei.Models.Customer>
+    @{
+
+        ViewBag.Title = "Index";
+    }
+<a class="btn btn-default" href="@Url.Action("create")">
+    افزودن
+    <span class="glyphicon glyphicon-share">
+
+    </span>
+
+</a>
+<br />
+<div class="table-responsive">
+    <Div class="float-right">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>نام</th>
+                <th>عضو خبرنامه میباشد ؟</th>
+                <th>جزئیات</th>
+            </tr>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="2">
+                        در  حال حاضر هیچ مشتری در سیستم وجود ندارد
+                    </td>
+                </tr>
+            }
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@if (item.IsSubscribedToNewsLetter)
+                    {
+                        <text>بله</text>
+                    }
+                    else
+                    { <text>خیر</text>
+                    }
+                    </td>
+                    <td>
+                        @Html.ActionLink("نمایش", "Details", "Customer",new { id=item.Id},null)
+                    </td>
+
+                </tr>
+
+            }
+
+
+
+        </table>
+
+    </Div>
+
+</div>

@@ -1,0 +1,44 @@
+﻿@model DigiMovei.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="table-responsive">
+    <Div class="float-right">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>نام</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th>تاریخ تولد</th>
+                <td>@Model.BirthDate</td>
+            </tr>
+            <tr>
+                <th>آیا عضو خبرنامه؟</th>
+                <td>
+                    @if (Model.IsSubscribedToNewsLetter)
+                    {
+                        <text>بله</text>
+                    }
+                    else
+                    { <text>خیر</text>
+                    }
+                </td>
+            </tr>
+        </table>
+
+    </Div>
+
+</div>
+
+<br />
+<br />
+<a class="btn btn-default" href="@Url.Action("Index")"    >
+    بازگشت 
+    <span class="glyphicon glyphicon-share" >
+
+    </span>
+
+</a>
