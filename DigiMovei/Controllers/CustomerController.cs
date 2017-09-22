@@ -37,17 +37,19 @@ namespace DigiMovei.Controllers
             return View(customer);
         }
 
-
+       
         public ActionResult create()
-        {
-            var CustomrForViewModl = new CustomrForViewModl { MembershipTypes=db.MembershipType};
-
+        
+{
+            
+            var CustomrForViewModl = new CustomrForViewModl { MembershipTypes = db.MembershipType };
+            db.SaveChanges();
             return View(CustomrForViewModl);
         }
-        [HttpPost]
-        public ActionResult create(string Name,bool IsSubscribedToNewsLetter,DateTime BirthDate)
+         [HttpPost]
+        public ActionResult create(Customer customer)
         {
-            var customer = new Customer { Name = Name, IsSubscribedToNewsLetter = IsSubscribedToNewsLetter, BirthDate = BirthDate };
+            //var customer = new Customer { Name = Name, IsSubscribedToNewsLetter = true, BirthDate = BirthDate ,MembershipTypeID=1};
             db.Customers.Add(customer);
             db.SaveChanges();
 

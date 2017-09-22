@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<DigiMovei.Models.Customer>
     @{
 
-        ViewBag.Title = "Index";
+        ViewBag.Title = "نمایش مشتریان";
     }
 <a class="btn btn-default" href="@Url.Action("create")">
     افزودن
-    <span class="glyphicon glyphicon-share">
+    <span class="glyphicon glyphicon-plus">
 
     </span>
 
@@ -15,9 +15,9 @@
     <Div class="float-right">
         <table class="table table-bordered table-hover">
             <tr>
-                <th>نام</th>
-                <th>عضو خبرنامه میباشد ؟</th>
-                <th>جزئیات</th>
+                <th style="text-align :right">نام</th>
+                <th style="text-align :right">عضو خبرنامه میباشد ؟</th>
+                <th style="text-align :right">جزئیات</th>
             </tr>
             @if (!Model.Any())
             {

@@ -68,7 +68,7 @@ namespace DigiMovei.Controllers
         [HttpPost]
         public ActionResult SetLayout(string layout)
         {
-            return View("About", "~/Views/Shared/_" + layout + ".cshtml");
+            return View("Index", "~/Views/Shared/_" + layout + ".cshtml");
         }
 
 

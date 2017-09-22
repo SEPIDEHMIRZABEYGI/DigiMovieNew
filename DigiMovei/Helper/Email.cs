@@ -7,22 +7,22 @@ using System.Net;
 
 namespace DigiMovei.Helper
 {
-    public enum EmailType { Empty, Info }
+     public enum EmailType { Empty, Info }
 
-    public class Email
+    public  static class Email
     {
-        public static string GetMailName(EmailType type)
+        public static MailAddress GetMailName(EmailType type)
         {
             if (type == EmailType.Empty)
-                return "";
+                return new MailAddress("sepideh.mirzabeygi@gmail.com");
             else
-                return "sepideh.mirzabeygi@gmail.com";
+            { return new MailAddress("sepideh.mirzabeygi@gmail.com"); }
         }
 
         public static MailAddress GetMailAddress(EmailType type)
         {
             if (type == EmailType.Empty)
-                return new MailAddress("");
+                return new MailAddress("sepideh.mirzabeygi@gmail.com");
             else
                 return new MailAddress("sepideh.mirzabeygi@gmail.com", "دیجی مووی");
         }

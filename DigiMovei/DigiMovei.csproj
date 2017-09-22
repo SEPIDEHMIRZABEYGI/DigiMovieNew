@@ -245,6 +245,22 @@
     <Compile Include="Migrations\201709171104082_CustomrForViewModl.Designer.cs">
       <DependentUpon>201709171104082_CustomrForViewModl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709221317057_create.cs" />
+    <Compile Include="Migrations\201709221317057_create.Designer.cs">
+      <DependentUpon>201709221317057_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709221330036_model.cs" />
+    <Compile Include="Migrations\201709221330036_model.Designer.cs">
+      <DependentUpon>201709221330036_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709221511294_viwemoelcreate.cs" />
+    <Compile Include="Migrations\201709221511294_viwemoelcreate.Designer.cs">
+      <DependentUpon>201709221511294_viwemoelcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709221554337_finishcreate.cs" />
+    <Compile Include="Migrations\201709221554337_finishcreate.Designer.cs">
+      <DependentUpon>201709221554337_finishcreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -505,6 +521,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709171104082_CustomrForViewModl.resx">
       <DependentUpon>201709171104082_CustomrForViewModl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221317057_create.resx">
+      <DependentUpon>201709221317057_create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221330036_model.resx">
+      <DependentUpon>201709221330036_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221511294_viwemoelcreate.resx">
+      <DependentUpon>201709221511294_viwemoelcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221554337_finishcreate.resx">
+      <DependentUpon>201709221554337_finishcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

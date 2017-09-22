@@ -1,6 +1,6 @@
 ﻿@model DigiMovei.ViewModels.CustomrForViewModl
 @{
-    ViewBag.Title = "create";
+    ViewBag.Title = "افزون مشتری";
 }
 
 @using (Html.BeginForm())
@@ -24,10 +24,16 @@
 
 
     <div class="form-group">
-        @Html.LabelFor(c => c.Customer.MembershipType, "نوع عضویت:")
-        @Html.DropDownListFor(c => c.Customer.MembershipType, new SelectList(Model.MembershipTypes,"Id","Name"),"لطفا یک گزینه را انتخاب کنید", new { @class = "form-control" })
+        @Html.LabelFor(c => c.Customer.MembershipTypeID, "نوع عضویت:")
+        @Html.DropDownListFor(c => c.Customer.MembershipTypeID, new SelectList(Model.MembershipTypes, "Id","Name"),"لطفا یک گزینه را انتخاب کنید", new { @class = "form-control" })
     </div>
 
+
+    <button type="submit" class="btn btn-success">
+        افزودن
+        <span class="glyphicon glyphicon-plus" ></span>
+
+    </button>
     <br />
 
     <a class="btn btn-default" href="@Url.Action("Index")">
@@ -36,14 +42,7 @@
 
         </span>
 
-        <br />
-        <a class="btn btn-default" href="@Url.Action("Index")">
-            افزودن
-            <span class="glyphicon glyphicon-share">
-
-            </span>
-
-        </a>
+       
 
     </a>
 
