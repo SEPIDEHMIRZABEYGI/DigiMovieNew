@@ -1,0 +1,57 @@
+﻿@model DigiMovei.Models.Customer
+
+@{
+    ViewBag.Title = "حذف مشتری";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+<br />
+<div class="table-responsive" >
+    <table class="table table-bordered table-hover" >
+        <tr>
+            <th style="text-align:right">
+                نام:
+            </th>
+            <td>
+                @Model.Name
+            </td>
+        </tr>
+
+
+        <tr>
+            <th style="text-align:right">
+                تاریخ تولد:
+            </th>
+            <td>
+                @Model.BirthDate
+            </td>
+        </tr>
+
+
+
+    </table>
+
+</div>
+
+
+@using (Html.BeginForm())
+{
+    <button type="submit" class="btn btn-danger">
+        حذف
+        <span class="glyphicon glyphicon-remove"></span>
+
+    </button>
+    <br />
+
+    <a class="btn btn-default" href="@Url.Action("Index")">
+        بازگشت
+        <span class="glyphicon glyphicon-share">
+
+        </span>
+
+
+
+    </a>
+
+}

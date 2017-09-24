@@ -25,6 +25,28 @@
                     <li class="navbar-right" >@Html.ActionLink("صفحه اصلی ", "Index", "Home")</li>
                     <li class="navbar-right">@Html.ActionLink("درباره ما ", "About", "Home")</li>
                     <li class="navbar-right">@Html.ActionLink("ارتباط با ما ", "Contact", "Home")</li>
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown">مشتریان
+    <span class="create"></span></a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href=" @Url.Action("create","Customer")">
+               افزودن
+            </a>
+            </li>
+
+        <li>
+
+            <a href=" @Url.Action("Index", "Customer")">
+                مدیریت
+            </a>
+        </li>
+
+
+    </ul>
+</li>
+
+
                     <li class="navbar-right">@using (Html.BeginForm("SetLayout", "Home"))
                     {
                         @Html.Label("layout", "تم مورد علاقه خود را انتخاب کنید : ")

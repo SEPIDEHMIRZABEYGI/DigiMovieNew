@@ -1,21 +1,25 @@
 ﻿@model DigiMovei.ViewModels.CustomrForViewModl
+
 @{
-    ViewBag.Title = "افزون مشتری";
+    ViewBag.Title = "ویرایش";
 }
+
+<h2>@ViewBag.Title</h2>
+
 
 @using (Html.BeginForm())
 {
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name, "نام:")
-        @Html.TextBoxFor(c => c.Customer.Name, null, new {@class ="form-control"})
+        @Html.TextBoxFor(c => c.Customer.Name, null, new { @class = "form-control" })
         @*@Html.LabelFor(c=>c.Name,"نام:")
-        @Html.TextBoxFor(c => c.Name, null, new {@class ="form-control"})*@
+            @Html.TextBoxFor(c => c.Name, null, new {@class ="form-control"})*@
 
     </div>
 
     <div class="checkbox">
         @Html.LabelFor(c => c.Customer.IsSubscribedToNewsLetter, "عضو خبرنامه:")
-        @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter,new { @class = "pull-right" })
+        @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter, new { @class = "pull-right" })
     </div>
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.BirthDate, "تاریخ تولد:")
@@ -25,13 +29,13 @@
 
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.MembershipTypeID, "نوع عضویت:")
-        @Html.DropDownListFor(c => c.Customer.MembershipTypeID, new SelectList(Model.MembershipTypes, "Id","Name"),"لطفا یک گزینه را انتخاب کنید", new { @class = "form-control" })
+        @Html.DropDownListFor(c => c.Customer.MembershipTypeID, new SelectList(Model.MembershipTypes, "Id", "Name"), "لطفا یک گزینه را انتخاب کنید", new { @class = "form-control" })
     </div>
 
 
     <button type="submit" class="btn btn-success">
-        افزودن
-        <span class="glyphicon glyphicon-plus" ></span>
+        ویرایش
+        <span class="glyphicon glyphicon-pencil"></span>
 
     </button>
     <br />
@@ -42,20 +46,25 @@
 
         </span>
 
+
+
     </a>
 
-   @section scripts{ 
-   
+}
+
+@section scripts{
+
     <script src="~/Scripts/toastr.js"></script>
-       <script>
-           if (@TempData["CreateState"]==0) {
-               toastr.error("مشتری مورد نظر افزوده نگردید", "دیجی مووی", { "progressBar": true, "timeOut": "1000", "positionClass": "toast-top-left" })
+    <script>
+           if (@TempData["EditStat"]==0) {
+               toastr.error("مشتری مورد نظر ویرایش نگردید", "دیجی مووی", { "progressBar": true, "timeOut": "1000", "positionClass": "toast-top-left" })
 
            }
 
 
-       </script>
+    </script>
 }
 
-}
+
+
 

@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using DigiMovei.Models;
 using System.Net;
 using DigiMovei.ViewModels;
+using System.Data.Entity.Migrations;
+
 
 
 namespace DigiMovei.Controllers
@@ -17,8 +19,8 @@ namespace DigiMovei.Controllers
         {
             db = new ApplicationDbContext();
         }
-        
-            
+
+
         // GET: Customer
         public ActionResult Index()
         {
@@ -37,19 +39,19 @@ namespace DigiMovei.Controllers
             return View(customer);
         }
 
-       
+
         public ActionResult create()
-        
-{
-            
+
+        {
+
             var CustomrForViewModl = new CustomrForViewModl { MembershipTypes = db.MembershipType };
             db.SaveChanges();
             return View(CustomrForViewModl);
         }
-         [HttpPost]
+        [HttpPost]
         public ActionResult create(Customer customer)
         {
-            //var customer = new Customer { Name = Name, IsSubscribedToNewsLetter = true, BirthDate = BirthDate ,MembershipTypeID=1};
+
             db.Customers.Add(customer);
             db.SaveChanges();
 
@@ -57,5 +59,78 @@ namespace DigiMovei.Controllers
         }
 
 
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var customer = db.Customers.Find(id);
+            if (customer == null)
+
+                return HttpNotFound();
+            var CustomrForViewModl = new CustomrForViewModl { MembershipTypes = db.MembershipType,
+                Customer = customer };
+
+            return View(CustomrForViewModl);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Customer customer)
+        {
+            db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+                TempData["EditStat"] = 1;
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                TempData["EditStat"] = 0;
+                return RedirectToAction("Edit");
+            }
+
+
+
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var customer = db.Customers.Find(id);
+            if (customer == null)
+
+                return HttpNotFound();
+
+
+            return View(customer);
+        }
+
+
+        [HttpPost]
+    [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            
+            var customer = db.Customers.Find(id);
+            db.Customers.Remove(customer);
+            try
+            { 
+
+                db.SaveChanges();
+                TempData["DeleteStat"] = 1;
+
+            return RedirectToAction("Index");
+
+            }
+            catch 
+            {
+
+                TempData["DeleteStat"] = 0;
+                return RedirectToAction("Delete");
+            }
+            
+        }
     }
 }

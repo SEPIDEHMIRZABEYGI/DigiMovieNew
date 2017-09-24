@@ -257,14 +257,27 @@
     <Compile Include="Migrations\201709221511294_viwemoelcreate.Designer.cs">
       <DependentUpon>201709221511294_viwemoelcreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709221554337_finishcreate.cs" />
-    <Compile Include="Migrations\201709221554337_finishcreate.Designer.cs">
-      <DependentUpon>201709221554337_finishcreate.cs</DependentUpon>
+    <Compile Include="Migrations\201709240220562_movie.cs" />
+    <Compile Include="Migrations\201709240220562_movie.Designer.cs">
+      <DependentUpon>201709240220562_movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240226083_addGenre.cs" />
+    <Compile Include="Migrations\201709240226083_addGenre.Designer.cs">
+      <DependentUpon>201709240226083_addGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240230042_addrelbtmoveandgenre.cs" />
+    <Compile Include="Migrations\201709240230042_addrelbtmoveandgenre.Designer.cs">
+      <DependentUpon>201709240230042_addrelbtmoveandgenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240231397_insertdataingenre.cs" />
+    <Compile Include="Migrations\201709240231397_insertdataingenre.Designer.cs">
+      <DependentUpon>201709240231397_insertdataingenre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -468,6 +481,8 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -531,8 +546,17 @@
     <EmbeddedResource Include="Migrations\201709221511294_viwemoelcreate.resx">
       <DependentUpon>201709221511294_viwemoelcreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709221554337_finishcreate.resx">
-      <DependentUpon>201709221554337_finishcreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709240220562_movie.resx">
+      <DependentUpon>201709240220562_movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240226083_addGenre.resx">
+      <DependentUpon>201709240226083_addGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240230042_addrelbtmoveandgenre.resx">
+      <DependentUpon>201709240230042_addrelbtmoveandgenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240231397_insertdataingenre.resx">
+      <DependentUpon>201709240231397_insertdataingenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -35,7 +35,8 @@ namespace DigiMovei.Models
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<MembershipType> MembershipType { get; set; }
-     
+        public DbSet<Genre> Genres { get; set; }
+
     }
 
 }

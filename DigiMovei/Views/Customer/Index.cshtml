@@ -18,6 +18,8 @@
                 <th style="text-align :right">نام</th>
                 <th style="text-align :right">عضو خبرنامه میباشد ؟</th>
                 <th style="text-align :right">جزئیات</th>
+                <th style="text-align :right">ویرایش</th>
+                <th style="text-align :right">حذف</th>
             </tr>
             @if (!Model.Any())
             {
@@ -44,6 +46,14 @@
                         @Html.ActionLink("نمایش", "Details", "Customer",new { id=item.Id},null)
                     </td>
 
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", "Customer", new { id = item.Id }, null)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("حذف", "Delete", "Customer", new { id = item.Id }, null)
+                    </td>
+
                 </tr>
 
             }
@@ -55,3 +65,16 @@
     </Div>
 
 </div>
+
+@section scripts{
+
+    <script src="~/Scripts/toastr.js"></script>
+    <script>
+           if (@TempData["EditStat"]==1) {
+               toastr.success("مشتری مورد نظر  با موفقیت ویرایش گردید", "دیجی مووی", { "progressBar": true, "timeOut": "1000", "positionClass": "toast-top-left" })
+
+           }
+
+
+    </script>
+}

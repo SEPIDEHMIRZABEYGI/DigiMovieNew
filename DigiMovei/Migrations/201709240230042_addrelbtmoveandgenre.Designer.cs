@@ -7,13 +7,13 @@ namespace DigiMovei.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class finishcreate : IMigrationMetadata
+    public sealed partial class addrelbtmoveandgenre : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(finishcreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addrelbtmoveandgenre));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709221554337_finishcreate"; }
+            get { return "201709240230042_addrelbtmoveandgenre"; }
         }
         
         string IMigrationMetadata.Source
