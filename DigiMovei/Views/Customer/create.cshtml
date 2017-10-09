@@ -3,8 +3,19 @@
     ViewBag.Title = "افزون مشتری";
 }
 
+@section styles
+{
+    
+<link href="~/Scripts/PersianDateTimePicker/jquery-ui-datetimepicker.min.css" rel="stylesheet" />
+    }
+
+
+
+
 @using (Html.BeginForm())
 {
+
+    @ViewBag.message
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name, "نام:")
         @Html.TextBoxFor(c => c.Customer.Name, null, new {@class ="form-control"})
@@ -18,7 +29,7 @@
         @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter,new { @class = "pull-right" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(c => c.Customer.BirthDate, "تاریخ تولد:")
+        @Html.LabelFor(c => c.Customer.BirthDate, "تاریخ تولد:",new { id= "TxtBirthDate" })
         @Html.TextBoxFor(c => c.Customer.BirthDate, null, new { @class = "form-control" })
     </div>
 
@@ -26,6 +37,12 @@
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.MembershipTypeID, "نوع عضویت:")
         @Html.DropDownListFor(c => c.Customer.MembershipTypeID, new SelectList(Model.MembershipTypes, "Id","Name"),"لطفا یک گزینه را انتخاب کنید", new { @class = "form-control" })
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Customer.NationalCode, "کدملی:")
+        @Html.TextBoxFor(c => c.Customer.NationalCode, null, new { @class = "form-control" })
     </div>
 
 
@@ -55,7 +72,16 @@
 
 
        </script>
+
+
+<script src="~/Content/PersianDateTimePicker/jquery-ui-datetimepicker.min.js"></script>
+       <script type="text/javascript">
+           $(function () { $("#TxtBirthDate").alert("hi") }
+           );
+       </script>
 }
 
 }
+
+
 

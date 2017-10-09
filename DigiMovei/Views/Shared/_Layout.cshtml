@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
+    <link href="~/Scripts/redmond/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -47,10 +48,37 @@
 </li>
 
 
-                    <li class="navbar-right">@using (Html.BeginForm("SetLayout", "Home"))
-                    {
-                        @Html.Label("layout", "تم مورد علاقه خود را انتخاب کنید : ")
-                        @Html.DropDownList(
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            فیلم ها
+                            <span class="create"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href=" @Url.Action("create","Movies")">
+                                    افزودن
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href=" @Url.Action("Index", "Movies")">
+                                    مدیریت
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                 
+                </ul >
+
+                <p class="navbar-left">
+                    @using (Html.BeginForm("SetLayout", "Home"))
+                {
+                    @Html.Label("layout", "تم مورد علاقه خود را انتخاب کنید : ")
+                    @Html.DropDownList(
             "layout",
             new List<SelectListItem> {
 
@@ -59,8 +87,9 @@
             },
             new { onchange = "this.form.submit()" }
         )
-                    }</li>
-                </ul >
+                }
+            </p>
+
                 
             </div>
             @Html.Partial("_LoginPartial")
@@ -80,6 +109,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+  
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

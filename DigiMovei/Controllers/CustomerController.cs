@@ -7,6 +7,7 @@ using DigiMovei.Models;
 using System.Net;
 using DigiMovei.ViewModels;
 using System.Data.Entity.Migrations;
+using DigiMovei.Helper;
 
 
 
@@ -52,10 +53,16 @@ namespace DigiMovei.Controllers
         public ActionResult create(Customer customer)
         {
 
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                customer.BirthDate = customer.BirthDate.Value.ToMiladi();
+                db.Customers.Add(customer);
+                db.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            
+            return Content("ثبت نشد");
         }
 
 
@@ -67,6 +74,8 @@ namespace DigiMovei.Controllers
             if (customer == null)
 
                 return HttpNotFound();
+            customer.BirthDate = Convert.ToDateTime(customer.BirthDate.Value.ToPersian());
+
             var CustomrForViewModl = new CustomrForViewModl { MembershipTypes = db.MembershipType,
                 Customer = customer };
 
@@ -76,6 +85,7 @@ namespace DigiMovei.Controllers
         [HttpPost]
         public ActionResult Edit(Customer customer)
         {
+            customer.BirthDate =Convert.ToDateTime(customer.BirthDate.Value.ToPersian());
             db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
 
             try

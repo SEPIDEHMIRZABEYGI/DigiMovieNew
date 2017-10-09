@@ -1,8 +1,11 @@
 ﻿@*@section styles{
     <link href="~/Content/toastr.css" rel="stylesheet" />
 }*@
+
+
 @using (Html.BeginForm("SendEmail", "Home"))
 {
+    <br />
     <div class="form-group">
         @Html.Label("name", "نام : ")
         @Html.TextBox("name", null, new { @class = "form-control" })
