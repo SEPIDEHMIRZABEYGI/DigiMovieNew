@@ -23,9 +23,21 @@ namespace DigiMovei
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
+            //WebApi
+            bundles.Add(new ScriptBundle("~/bundles/api").Include(
+                "~/Scripts/bootbox.js",
+                "~/Scripts/DataTables/jquery.dataTables.js",
+                "~/Scripts/DataTables/dataTables.bootstrap.js"
+                ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Flatlay.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/api").Include("~/Content/DataTables/css/dataTables.bootstrap.css"));
+
+
         }
     }
 }
