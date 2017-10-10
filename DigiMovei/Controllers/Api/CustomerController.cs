@@ -30,27 +30,28 @@ namespace DigiMovei.Api
 
         //GET /api/customers
         [HttpGet]
-        public IEnumerable<CustomerDto> GetCustomers(string query = null)
+        public IHttpActionResult  GetCustomers(string query = null)
         {
-            return db.Customers.ToList().Select(mapper.Map<Customer, CustomerDto>);
+            return Ok(db.Customers.ToList().Select(mapper.Map<Customer, CustomerDto>));
+           
         }
 
         //GET /api/customers/1
         [HttpGet]
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = db.Customers.Find(id);
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            return mapper.Map<Customer, CustomerDto>(customer);
+                return NotFound();
+            return Ok(mapper.Map<Customer, CustomerDto>(customer));
         }
 
         //POST /api/customers/
         [HttpPost]
-        public CustomerDto PostCustomer(CustomerDto customerDto)
+        public IHttpActionResult PostCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
             var customer = mapper.Map<CustomerDto, Customer>(customerDto);
             db.Customers.Add(customer);
@@ -60,44 +61,46 @@ namespace DigiMovei.Api
             }
             catch
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
             customerDto.Id = customer.Id;
-            return customerDto;
+            return CreatedAtRoute("DefaultApi",new { customerDto.Id},customerDto);
         }
 
         //PUT /api/customers/1
         [HttpPut]
-        public void PutCustomer(int id, CustomerDto customerDto)
+        public IHttpActionResult PutCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var customer = mapper.Map<CustomerDto, Customer>(customerDto);
 
             if (id != customer.Id)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             db.Entry(customer).State = EntityState.Modified;
             try
             {
                 db.SaveChanges();
+                return StatusCode(HttpStatusCode.NoContent);
             }
             catch
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
         }
 
         //DELETE /api/customers/1
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customer = db.Customers.Find(id);
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             db.Customers.Remove(customer);
             db.SaveChanges();
+            return Ok(mapper.Map<Customer,CustomerDto>(customer));
         }
     }
 }

@@ -3,6 +3,11 @@
 
         ViewBag.Title = "نمایش مشتریان";
     }
+@section styles{
+    @Styles.Render("~/Content/api");
+    }
+
+
 <a class="btn btn-default" href="@Url.Action("create")">
     افزودن
     <span class="glyphicon glyphicon-plus">
@@ -13,7 +18,7 @@
 <br />
 <div class="table-responsive">
     <Div class="float-right">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" id="customertb">
             <tr>
                 <th style="text-align :right">نام</th>
                 <th style="text-align :right">عضو خبرنامه میباشد ؟</th>
@@ -77,4 +82,11 @@
 
 
     </script>
+
+
+@Scripts.Render("~/bundles/api");
+    <script>$('#customertb').DataTable();</script>
+
+
+
 }
